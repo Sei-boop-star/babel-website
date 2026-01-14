@@ -12,130 +12,6 @@
         rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Specific styles for Event Page based on Gallery/Dark theme */
-        body.event-page {
-            background-color: #0a0a0a;
-            /* darker background */
-            background-image: url('../assets/gallery_motif.jpg');
-            /* Re-using motif for now or standard dark bg */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #dcdcdc;
-        }
-
-        body.event-page::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            /* Darker overlay than gallery */
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .event-hero {
-            min-height: 30vh;
-            padding-top: 10rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-            z-index: 10;
-        }
-
-        .event-hero h1 {
-            font-family: 'Cinzel', serif;
-            font-size: 4rem;
-            color: #fff;
-            text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.1em;
-            border-bottom: 1px solid #333;
-            padding-bottom: 1rem;
-            display: inline-block;
-        }
-
-        .event-list {
-            padding: 4rem 10% 8rem;
-            max-width: 1000px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 10;
-        }
-
-        .event-item {
-            background: #111;
-            border: 1px solid #333;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            transition: all 0.3s ease;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .event-item:hover {
-            border-color: #a80000;
-            transform: translateY(-5px);
-        }
-
-        .event-date {
-            font-family: 'Cinzel', serif;
-            color: #a80000;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .event-title {
-            font-family: 'Cinzel', serif;
-            font-size: 2rem;
-            color: #fff;
-            margin-bottom: 0.5rem;
-        }
-
-        .event-desc {
-            font-family: 'Shippori Mincho', serif;
-            color: #ccc;
-            line-height: 1.6;
-        }
-
-        body.event-page nav {
-            mix-blend-mode: normal;
-            background: rgba(0, 0, 0, 0.8);
-            backdrop-filter: blur(5px);
-            border-bottom: 1px solid #222;
-        }
-
-        body.event-page .nav-logo-text {
-            color: #fff;
-        }
-
-        body.event-page .menu-items a {
-            color: #ccc;
-        }
-
-        body.event-page .menu-items a.active {
-            color: #fff;
-            border-bottom-color: #a80000;
-        }
-
-        body.event-page .hamburger .bar {
-            background-color: #ccc !important;
-        }
-
-        body.event-page footer {
-            background: #000;
-            color: #555;
-            border-top: 1px solid #111;
-        }
-    </style>
 </head>
 
 <body class="event-page">
@@ -163,17 +39,63 @@
 
     <main>
         <section class="event-hero">
-            <h1>EVENT</h1>
-            <p>Upcoming & Past Events</p>
+            <h1>EVENT & BAR</h1>
+            <p>A space where art, fashion, and people intersect.</p>
         </section>
 
-        <section class="event-list">
-            <div class="event-item">
-                <span class="event-date">COMING SOON</span>
-                <h2 class="event-title">New Collection Exhibition</h2>
-                <p class="event-desc">詳細は近日公開予定です。</p>
+        <section class="event-content-wrapper">
+
+            <!-- BAR INFO BLOCK -->
+            <div class="event-block">
+                <span class="event-type">REGULAR</span>
+                <div class="event-image-container">
+                    <img src="../assets/bar_atmosphere.png" alt="Bar Atmosphere" class="event-image">
+                </div>
+                <div class="event-details">
+                    <h2 class="event-title-main">BAR TIME</h2>
+                    <p class="event-description">
+                        アパレルショップに併設されたBARスペース。<br>
+                        ショッピングの合間に、あるいは夜の帳が下りた頃に。<br>
+                        アートに囲まれた非日常的な空間で、特別な一杯をお楽しみください。<br>
+                        定期的にDJイベントやアートエキシビションも開催しております。
+                    </p>
+
+                    <table class="event-info-table">
+                        <tr>
+                            <th>OPEN</th>
+                            <td>20:00 - 26:00 (L.O. 25:30)</td>
+                        </tr>
+                        <tr>
+                            <th>CLOSED</th>
+                            <td>Monday & Tuesday</td>
+                        </tr>
+                        <tr>
+                            <th>SYSTEM</th>
+                            <td>No Charge / 1 Drink Order</td>
+                        </tr>
+                        <tr>
+                            <th>ACCESS</th>
+                            <td>茨城県水戸市宮町2-3-33（BABEL店舗内）</td>
+                        </tr>
+                    </table>
+
+                    <a href="https://instagram.com/babel.wards" target="_blank" class="event-button">VIEW INSTAGRAM</a>
+                </div>
             </div>
-            <!-- Future events can be added here -->
+
+            <!-- Example Past Event Mockup (Optional to keep layout populated) -->
+            <div class="event-block">
+                <span class="event-type">PAST EVENT</span>
+                <div class="event-details">
+                    <h2 class="event-title-main">BABEL NIGHT Vol.01</h2>
+                    <p class="event-description">
+                        オープニングを飾った伝説の夜。<br>
+                        GUEST DJ: KENKEN<br>
+                        LIVE PAINT: CILANDSIA
+                    </p>
+                </div>
+            </div>
+
         </section>
     </main>
 
