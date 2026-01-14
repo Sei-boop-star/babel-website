@@ -11,21 +11,22 @@ document.addEventListener('DOMContentLoaded', () => {
         const scrollPercent = maxScroll > 0 ? Math.min(scrolled / maxScroll, 1) : 0;
 
         // Phase 1: Painting over (White Fill)
-        // Starts at 0, fully white by 35%
-        let whiteOpacity = scrollPercent * 2.8;
+        // Starts at 0, fully white by 15% (Accelerated)
+        let whiteOpacity = scrollPercent * 6.6;
         if (whiteOpacity > 1) whiteOpacity = 1;
         whiteFill.style.opacity = whiteOpacity;
 
         // Phase 2: Appearance of Pieta (Emerging)
-        // Starts appearing after 45%, fully visible by 85%
-        let pietaProgress = (scrollPercent - 0.45) * 2.5;
+        // Starts appearing after 15%, fully visible by 40%
+        // Using "LATEST NEWS" section as a cue for visibility
+        let pietaProgress = (scrollPercent - 0.15) * 4;
         if (pietaProgress < 0) pietaProgress = 0;
         if (pietaProgress > 1) pietaProgress = 1;
         bgPieta.style.opacity = pietaProgress;
 
         // Phase 3: Growing Branches (Top Left)
-        // Starts slightly after Pieta starts emerging (60% -> 100%)
-        let branchProgress = (scrollPercent - 0.6) * 2.5;
+        // Starts appearing after 30%, fully grown by 65%
+        let branchProgress = (scrollPercent - 0.3) * 2.8;
         if (branchProgress < 0) branchProgress = 0;
         if (branchProgress > 1) branchProgress = 1;
 
