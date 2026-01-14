@@ -42,10 +42,8 @@
 
     <main>
         <section class="gallery-hero">
-            <div class="content centered-simple">
-                <h1>GALLERY</h1>
-                <p>Pieces of Art & Chaos</p>
-            </div>
+            <h1>GALLERY</h1>
+            <p>Pieces of Art & Chaos</p>
         </section>
 
         <section class="gallery-grid">
@@ -87,14 +85,6 @@
                     hamburger.classList.toggle('active');
                     menuItems.classList.toggle('active');
                     nav.classList.toggle('active');
-
-                    // Toggle hamburger color for visibility on red background
-                    const bars = document.querySelectorAll('.bar');
-                    if (hamburger.classList.contains('active')) {
-                        bars.forEach(bar => bar.style.backgroundColor = 'white');
-                    } else {
-                        bars.forEach(bar => bar.style.backgroundColor = '#111');
-                    }
                 });
             }
         });
