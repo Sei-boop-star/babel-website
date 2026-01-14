@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GALLERY | BABEL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Shippori+Mincho:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Background Layers (Simplified for Gallery) -->
+    <div class="bg-container">
+        <div class="bg-layer bg-white-fill" style="opacity: 0.8; z-index: -1;"></div>
+    </div>
+
+    <nav style="mix-blend-mode: normal; color: #111;">
+        <div class="logo-container">
+            <a href="../index.html" class="nav-logo-text" style="color: #111;">BABEL</a>
+        </div>
+
+        <div class="hamburger">
+            <span class="bar" style="background-color: #111;"></span>
+            <span class="bar" style="background-color: #111;"></span>
+            <span class="bar" style="background-color: #111;"></span>
+        </div>
+
+        <div class="menu-items">
+            <a href="../index.html">TOP</a>
+            <a href="../index.html#shop">ONLINE SHOP</a>
+            <a href="../index.html#concept">CONCEPT</a>
+            <a href="../index.html#andfineline">PRODUCT</a>
+            <a href="#" class="active">GALLERY</a>
+            <a href="../index.html#contact">CONTACT</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="gallery-hero">
+            <div class="content centered-simple">
+                <h1>GALLERY</h1>
+                <p>Pieces of Art & Chaos</p>
+            </div>
+        </section>
+
+        <section class="gallery-grid">
+            <!-- Provisional Gallery Items -->
+            <div class="gallery-item">
+                <div class="placeholder-art">Art Piece 01</div>
+            </div>
+            <div class="gallery-item">
+                <div class="placeholder-art">Art Piece 02</div>
+            </div>
+            <div class="gallery-item">
+                <div class="placeholder-art">Art Piece 03</div>
+            </div>
+            <div class="gallery-item">
+                <div class="placeholder-art">Art Piece 04</div>
+            </div>
+            <div class="gallery-item">
+                <div class="placeholder-art">Art Piece 05</div>
+            </div>
+            <div class="gallery-item">
+                <div class="placeholder-art">Art Piece 06</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 BABEL Inc. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Simple Mobile Menu Script for Gallery Page
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const menuItems = document.querySelector('.menu-items');
+            const nav = document.querySelector('nav');
+
+            if (hamburger) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    menuItems.classList.toggle('active');
+                    nav.classList.toggle('active');
+
+                    // Toggle hamburger color for visibility on red background
+                    const bars = document.querySelectorAll('.bar');
+                    if (hamburger.classList.contains('active')) {
+                        bars.forEach(bar => bar.style.backgroundColor = 'white');
+                    } else {
+                        bars.forEach(bar => bar.style.backgroundColor = '#111');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
