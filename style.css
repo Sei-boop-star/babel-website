@@ -382,17 +382,15 @@ footer {
         top: 0;
         gap: 0;
         flex-direction: column;
-        background-color: rgba(139, 0, 0, 0.95);
+        background-color: #8b0000;
         width: 100%;
         height: 100vh;
         text-align: center;
         transition: 0.3s;
         z-index: 99;
-        /* Behind hamburger (101) but above nav (100) background if needed, but nav is 100. Wait nav is 100, hamburger is 101. Menu needs to be 100 or slightly less to be part of nav flow? No, fixed over screen. */
         display: flex;
         justify-content: center;
         align-items: center;
-        backdrop-filter: blur(10px);
     }
 
     .menu-items.active {
