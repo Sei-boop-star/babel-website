@@ -700,4 +700,135 @@ body.gallery-page footer {
     width: 100%;
     height: auto;
     display: block;
+}/* About / Contact Section Styles */
+.about-section {
+    background-color: #0a0a0a;
+    color: #fff;
+    padding: 4rem 5%;
+    min-height: auto;
+    display: block;
+    border-top: 1px solid #1a1a1a;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    letter-spacing: 0.05em;
+}
+
+.accent-red {
+    color: #E31D1A;
+    /* Bright red from image/request */
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.about-info {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.company-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.address {
+    margin-bottom: 1.5rem;
+}
+
+.contact-row {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Cinzel', 'Shippori Mincho', serif;
+}
+
+.sns-links {
+    margin: 1.5rem 0 2rem;
+    font-family: 'Cinzel', sans-serif;
+    font-size: 0.95rem;
+}
+
+.sns-links p {
+    margin-bottom: 0.5rem;
+}
+
+.sns-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    margin-left: 5px;
+    transition: color 0.3s;
+}
+
+.sns-links a:hover {
+    color: #E31D1A;
+}
+
+.contact-btn-red {
+    display: inline-block;
+    background-color: #E31D1A;
+    color: #fff;
+    padding: 1.2rem 3rem;
+    text-decoration: none;
+    font-family: 'Shippori Mincho', serif;
+    font-weight: 600;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 10px rgba(227, 29, 26, 0.3);
+}
+
+.contact-btn-red:hover {
+    background-color: #c01512;
+}
+
+.contact-btn-red .line {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    width: 20px;
+    height: 1px;
+    background: #fff;
+    transform: translateY(-50%);
+}
+
+.about-map iframe {
+    filter: grayscale(100%) invert(92%) contrast(0.83);
+    /* Custom map style to fit dark theme */
+    border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        text-align: left;
+    }
+
+    .about-map {
+        margin-top: 1rem;
+    }
 }
