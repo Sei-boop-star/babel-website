@@ -590,10 +590,18 @@ body.gallery-page::before {
 }
 
 /* Crop the bottom footer text from specific images */
+/* Crop the bottom footer text from specific images */
 .gallery-item img.crop-bottom {
     clip-path: inset(0 0 13% 0);
     margin-bottom: -13.5%;
     /* Pull caption up to close the gap */
+    display: block;
+}
+
+/* Harder crop for the 5th image where text remains */
+.gallery-item img.crop-bottom-large {
+    clip-path: inset(0 0 22% 0);
+    margin-bottom: -22.5%;
     display: block;
 }
 
