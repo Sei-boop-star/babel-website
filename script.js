@@ -65,9 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.menu-items a');
 
     if (hamburger) {
+        const nav = document.querySelector('nav');
         hamburger.addEventListener('click', () => {
             hamburger.classList.toggle('active');
             menuItems.classList.toggle('active');
+            nav.classList.toggle('active');
         });
     }
 
@@ -76,6 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
             menuItems.classList.remove('active');
+            document.querySelector('nav').classList.remove('active');
         });
     });
 });

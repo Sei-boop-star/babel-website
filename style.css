@@ -94,6 +94,10 @@ nav {
     color: white;
 }
 
+nav.active {
+    mix-blend-mode: normal;
+}
+
 .logo-container {
     width: 120px;
     opacity: 0.9;
