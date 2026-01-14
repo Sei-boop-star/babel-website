@@ -1,0 +1,437 @@
+:root {
+    --text-color: #1a1a1a;
+    --text-light: #f8fafc;
+    --accent-color: #111;
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Shippori Mincho', 'Playfair Display', serif;
+    color: var(--text-color);
+    overflow-x: hidden;
+    background-color: #f4f4f4;
+    line-height: 1.8;
+}
+
+/* Background Handling */
+.bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.1s linear, opacity 0.1s linear;
+    will-change: transform, opacity;
+}
+
+.bg-last-supper {
+    background-image: url('assets/images/last_supper.png');
+    opacity: 1;
+    filter: contrast(1.1) brightness(1.1);
+    background-position: center top;
+}
+
+.bg-white-fill {
+    background-color: #f4f4f4;
+    opacity: 0;
+    z-index: 1;
+}
+
+.bg-pieta {
+    background-image: url('assets/images/pieta.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    z-index: 2;
+    transform: translateY(50px);
+}
+
+.bg-branches-new {
+    background-image: url('assets/images/branches_layer.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    z-index: 3;
+    transform-origin: top left;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    transition: all 0.3s ease;
+    mix-blend-mode: difference;
+    color: white;
+}
+
+.logo-container {
+    width: 120px;
+    opacity: 0.9;
+    transition: opacity 0.3s;
+}
+
+.logo-container:hover {
+    opacity: 1;
+}
+
+.nav-logo {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.2));
+}
+
+.menu-items a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 2rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.15em;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+
+
+.menu-items a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.menu-items a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 2px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: white;
+}
+
+/* Sections */
+main {
+    position: relative;
+    z-index: 10;
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 4rem 10%;
+    position: relative;
+}
+
+.hero {
+    justify-content: center;
+    text-align: center;
+}
+
+.content h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(3rem, 8vw, 6rem);
+    margin-bottom: 1.5rem;
+    color: #000;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    letter-spacing: -0.02em;
+}
+
+.content p {
+    font-size: 1.25rem;
+    font-style: italic;
+    color: #333;
+    font-weight: 300;
+}
+
+.story-section {
+    justify-content: flex-end;
+}
+
+.art-section {
+    justify-content: flex-start;
+}
+
+/* Glassmorphism Card Style */
+.story-content,
+.centered {
+    max-width: 600px;
+    background: var(--glass-bg);
+    padding: 3rem;
+    border-radius: 2px;
+    box-shadow: var(--glass-shadow);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 3px solid #111;
+}
+
+.story-content:hover,
+.centered:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
+}
+
+.story-content.right-align {
+    border-left: none;
+    border-right: 3px solid #111;
+    text-align: right;
+}
+
+.story-content h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.05em;
+    position: relative;
+    display: inline-block;
+}
+
+.story-content p,
+.centered p {
+    font-size: 1.1rem;
+    color: #222;
+    line-height: 1.8;
+}
+
+.final-section {
+    justify-content: center;
+}
+
+.centered {
+    text-align: center;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.6);
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    margin-top: 2.5rem;
+    padding: 18px 45px;
+    background: transparent;
+    color: #111;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    border: 1px solid #111;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #111;
+    transition: width 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    z-index: -1;
+}
+
+.btn:hover {
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    margin-top: 4rem;
+    width: 24px;
+    height: 40px;
+    border: 2px solid #333;
+    border-radius: 12px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.6;
+}
+
+.scroll-indicator span {
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: #333;
+    border-radius: 50%;
+    animation: scroll 2s cubic-bezier(0.15, 0.41, 0.69, 0.94) infinite;
+}
+
+@keyframes scroll {
+    0% {
+        top: 6px;
+        opacity: 1;
+    }
+
+    100% {
+        top: 24px;
+        opacity: 0;
+    }
+}
+
+/* Animation Classes */
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Footer */
+footer {
+    padding: 2rem;
+    text-align: center;
+    background: #111;
+    color: #fff;
+    font-family: 'Cinzel', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    position: relative;
+    z-index: 10;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav {
+        padding: 1rem 1.5rem;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .menu-items {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        gap: 0;
+        flex-direction: column;
+        background-color: rgba(10, 10, 10, 0.95);
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: 0.3s;
+        z-index: 99;
+        /* Behind hamburger (101) but above nav (100) background if needed, but nav is 100. Wait nav is 100, hamburger is 101. Menu needs to be 100 or slightly less to be part of nav flow? No, fixed over screen. */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(10px);
+    }
+
+    .menu-items.active {
+        left: 0;
+    }
+
+    .menu-items a {
+        margin: 1.5rem 0;
+        font-size: 1.5rem;
+    }
+
+    .content h1 {
+        font-size: 2.5rem;
+    }
+
+    section {
+        padding: 2rem 5%;
+    }
+
+    .story-content,
+    .centered {
+        padding: 2rem;
+    }
+
+    .story-content.right-align {
+        border-right: none;
+        border-left: 3px solid #111;
+        text-align: left;
+    }
+}.nav-logo-text {
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.nav-logo-text:hover {
+    opacity: 0.8;
+}
