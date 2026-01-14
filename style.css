@@ -670,4 +670,34 @@ body.gallery-page footer {
     background: #000;
     color: #555;
     border-top: 1px solid #111;
+}/* Banner Section */
+.banner-section {
+    width: 100%;
+    padding: 0;
+    /* Remove default section padding */
+    min-height: auto;
+    /* Allow auto height based on image */
+    display: flex;
+    justify-content: center;
+    background: #000;
+    /* Seamless blend if image has black bg */
+}
+
+.banner-link {
+    display: block;
+    width: 100%;
+    max-width: 1200px;
+    /* Optional max-width constraint */
+    margin: 0 auto;
+    transition: opacity 0.3s ease;
+}
+
+.banner-link:hover {
+    opacity: 0.9;
+}
+
+.footer-banner {
+    width: 100%;
+    height: auto;
+    display: block;
 }
