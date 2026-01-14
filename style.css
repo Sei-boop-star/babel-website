@@ -589,6 +589,14 @@ body.gallery-page::before {
     object-fit: contain;
 }
 
+/* Crop the bottom footer text from specific images */
+.gallery-item img.crop-bottom {
+    clip-path: inset(0 0 13% 0);
+    margin-bottom: -13.5%;
+    /* Pull caption up to close the gap */
+    display: block;
+}
+
 .caption {
     background: #1a1a1a;
     color: #a80000;
