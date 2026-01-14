@@ -981,4 +981,178 @@ body.event-page footer {
 .event-button:hover {
     background: #a80000;
     color: #fff;
+}/* Product Page Styles */
+
+/* Reuse styles from Gallery/Event pages via CSS class injection logic if possible, 
+   but define specific overrides here */
+body.product-page {
+    background-color: #0c0c0c;
+    background-image: url('assets/gallery_motif.jpg');
+    /* If loaded from root CSS, path might differ */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #e0e0e0;
+}
+
+body.product-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.92);
+    /* Very dark overlay */
+    z-index: -1;
+    pointer-events: none;
+}
+
+.product-hero {
+    min-height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 8rem;
+    padding-bottom: 2rem;
+}
+
+.product-hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3.5rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+}
+
+.product-hero p {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #a80000;
+    font-size: 1.2rem;
+}
+
+.product-intro {
+    text-align: center;
+    padding: 2rem 5%;
+    max-width: 800px;
+    margin: 0 auto 5rem;
+    border-bottom: 1px solid #222;
+}
+
+.intro-text h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #ddd;
+}
+
+.intro-desc {
+    font-family: 'Shippori Mincho', serif;
+    line-height: 1.8;
+    color: #aaa;
+    margin-top: 1.5rem;
+}
+
+.product-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5% 8rem;
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+}
+
+.product-item {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+}
+
+.product-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.product-image-wrapper {
+    flex: 1;
+    overflow: hidden;
+    border: 1px solid #222;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s ease;
+    filter: grayscale(20%);
+}
+
+.product-image-wrapper:hover .product-image {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+}
+
+.product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-category {
+    font-family: 'Cinzel', serif;
+    color: #a80000;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.product-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.product-desc {
+    font-family: 'Shippori Mincho', serif;
+    color: #bbb;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.view-more-btn {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    border: 1px solid #555;
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Cinzel', serif;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    align-self: flex-start;
+}
+
+.view-more-btn:hover {
+    background: #a80000;
+    border-color: #a80000;
+}
+
+@media (max-width: 768px) {
+
+    .product-item,
+    .product-item.reverse {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .product-hero h1 {
+        font-size: 2.5rem;
+    }
 }

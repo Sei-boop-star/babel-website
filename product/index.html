@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRODUCT | BABEL</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Shippori+Mincho:wght@400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="product-page">
+
+    <nav>
+        <div class="logo-container">
+            <a href="../index.html" class="nav-logo-text">BABEL</a>
+        </div>
+
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <div class="menu-items">
+            <a href="../index.html">TOP</a>
+            <a href="https://babelwards.base.shop" target="_blank">ONLINE SHOP</a>
+            <a href="../event/index.html">EVENT</a>
+            <a href="#" class="active">PRODUCT</a>
+            <a href="../gallery/index.html">GALLERY</a>
+            <a href="../index.html#contact">CONTACT</a>
+        </div>
+    </nav>
+
+    <main>
+        <section class="product-hero">
+            <h1>PRODUCT</h1>
+            <p>and fine line</p>
+        </section>
+
+        <section class="product-intro">
+            <div class="intro-text">
+                <h2>and fine line</h2>
+                <p>
+                    2025 Start.<br>
+                    BABEL Director Yamagata × Cilandsia Takashi Kondo
+                </p>
+                <p class="intro-desc">
+                    素材、ボディーをデザイン監修し、動きの美しさとグラフィックデザインを作り上げ、<br>
+                    服にとどまらず、製作活動を絵画や器、空間アートに特化していくブランド。
+                </p>
+            </div>
+        </section>
+
+        <section class="product-list">
+
+            <!-- Product Item 1 -->
+            <div class="product-item">
+                <div class="product-image-wrapper">
+                    <!-- Placeholder image: Reusing gallery image for demo -->
+                    <img src="../assets/gallery/skeleton_print.jpg" alt="Collaboration Item" class="product-image">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Collaborations</span>
+                    <h3 class="product-title">KenKen (RIZE) Stage Costume</h3>
+                    <p class="product-desc">
+                        ミュージシャン KenKen（RIZE）氏への衣装提供モデル。<br>
+                        動きやすさとステージ映えするグラフィックを両立させた一点物。
+                    </p>
+                    <a href="https://babelwards.base.shop" target="_blank" class="view-more-btn">VIEW AT SHOP</a>
+                </div>
+            </div>
+
+            <!-- Product Item 2 -->
+            <div class="product-item reverse">
+                <div class="product-image-wrapper">
+                    <img src="../assets/gallery/memories_on_sand_triptych.png" alt="Art Graphics" class="product-image">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Graphic Art</span>
+                    <h3 class="product-title">Graphic Salopette</h3>
+                    <p class="product-desc">
+                        Cilandsia Takashi Kondoによる描き下ろしグラフィックを<br>
+                        全面にプリントしたオーバーサイズサロペット。
+                    </p>
+                    <a href="https://babelwards.base.shop" target="_blank" class="view-more-btn">VIEW AT SHOP</a>
+                </div>
+            </div>
+
+            <!-- Product Item 3 -->
+            <div class="product-item">
+                <div class="product-image-wrapper">
+                    <img src="../assets/gallery/memories_on_sand_single.jpg" alt="Potted Plant Art"
+                        class="product-image">
+                </div>
+                <div class="product-info">
+                    <span class="product-category">Life Style</span>
+                    <h3 class="product-title">Art Potted Plants</h3>
+                    <p class="product-desc">
+                        「日常にARTを」をテーマにした、<br>
+                        一点物の植木鉢シリーズ。植物とアートの融合。
+                    </p>
+                    <a href="https://babelwards.base.shop" target="_blank" class="view-more-btn">VIEW AT SHOP</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 BABEL Inc. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const hamburger = document.querySelector('.hamburger');
+            const menuItems = document.querySelector('.menu-items');
+            const nav = document.querySelector('nav');
+
+            if (hamburger) {
+                hamburger.addEventListener('click', () => {
+                    hamburger.classList.toggle('active');
+                    menuItems.classList.toggle('active');
+                    nav.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
