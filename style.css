@@ -483,4 +483,141 @@ footer {
 /* Override nav link color for white background pages if needed */
 .menu-items a.active::after {
     width: 100%;
+}/* Gallery Specific Overrides (Dark & Grunge Theme) */
+body.gallery-page {
+    background-color: #0a0a0a;
+    background-image: url('assets/gallery_motif.jpg');
+    /* Fallback/Blend */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #dcdcdc;
+}
+
+/* Dark overlay to make text readable but keep the texture */
+body.gallery-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.gallery-hero {
+    min-height: 30vh;
+    padding-top: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+}
+
+.gallery-hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 4rem;
+    color: #a80000;
+    /* Blood red */
+    text-shadow: 0 0 20px rgba(168, 0, 0, 0.4);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid #333;
+    padding-bottom: 1rem;
+    display: inline-block;
+}
+
+.gallery-hero p {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: #888;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 3rem;
+    padding: 4rem 10% 8rem;
+    position: relative;
+    z-index: 10;
+}
+
+/* Frame Effect for Gallery Items */
+.gallery-item {
+    aspect-ratio: 3 / 4;
+    background: #1a1a1a;
+    position: relative;
+    transition: all 0.4s ease;
+    /* Creating a heavy frame effect using borders and shadows */
+    border: 8px solid #2a2a2a;
+    box-shadow:
+        inset 0 0 20px rgba(0, 0, 0, 0.8),
+        /* Inner shadow for depth */
+        0 10px 30px rgba(0, 0, 0, 0.5);
+    /* Outer shadow */
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* Gold/Bronze metallic accent for frame on hover */
+.gallery-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    border-color: #5a4a35;
+    /* Bronze-like color */
+    box-shadow:
+        inset 0 0 30px rgba(0, 0, 0, 0.9),
+        0 20px 50px rgba(168, 0, 0, 0.15);
+    /* Subtle red glow */
+    z-index: 20;
+}
+
+.placeholder-art {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #444;
+    font-family: 'Cinzel', serif;
+    background: #111;
+    /* Grunge texture overlay could be added here */
+}
+
+/* Nav overrides for this dark page */
+body.gallery-page nav {
+    mix-blend-mode: normal;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid #222;
+}
+
+body.gallery-page .nav-logo-text {
+    color: #a80000;
+}
+
+body.gallery-page .menu-items a {
+    color: #ccc;
+}
+
+body.gallery-page .menu-items a.active {
+    color: #fff;
+    border-bottom-color: #a80000;
+}
+
+body.gallery-page .hamburger .bar {
+    background-color: #ccc !important;
+}
+
+/* Footer override */
+body.gallery-page footer {
+    background: #000;
+    color: #555;
+    border-top: 1px solid #111;
 }
